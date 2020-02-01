@@ -16,6 +16,8 @@ import java.util.Random;
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
     public int r;
+    public int i=0;
+    public int[] imageList = new int[]{R.drawable.e, R.drawable.e1};    // Two images added to list
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         layout.screenBrightness = 1F;
         getWindow().setAttributes(layout);//End
 
-        final ViewFlipper viewFlipper = findViewById(R.id.ViewFlipper);
+//        final ViewFlipper viewFlipper = findViewById(R.id.ViewFlipper);
 
         swipe = new Swipe();
         swipe.setListener(new SwipeListener() {
@@ -39,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override public boolean onSwipedLeft(final MotionEvent event) {
                 //info.setText("SWIPED_LEFT");
                 //viewFlipper.showNext();
+                i++;
                 rotation();
                 return true;
             }
@@ -50,7 +53,8 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override public boolean onSwipedRight(final MotionEvent event) {
                 //info.setText("SWIPED_RIGHT");
-                viewFlipper.showNext();
+                i++;
+                rotation();
                 return true;
 
             }
@@ -61,7 +65,8 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override public boolean onSwipedUp(final MotionEvent event) {
                 //info.setText("SWIPED_UP");
-                viewFlipper.showNext();
+                i++;
+                rotation();
                 return true;
             }
 
@@ -71,22 +76,25 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override public boolean onSwipedDown(final MotionEvent event) {
                 //info.setText("SWIPED_DOWN");
-                viewFlipper.showPrevious();
+                i++;
+                rotation();
                 return true;
             }
         });
     }
-    public void rotation(){
-        Random rand = new Random();
-        r=rand.nextInt(4);
-        ImageView imgview;
-        imgview = (ImageView)findViewById(R.id.imageView1);
-        imgview.setRotation((float) 90.0*r);
-    }
-
 
     @Override public boolean dispatchTouchEvent(MotionEvent event) {
         swipe.dispatchTouchEvent(event);
         return super.dispatchTouchEvent(event);
     }
+
+    public void rotation() {
+        Random rand = new Random();
+        r = rand.nextInt(4);
+        ImageView imgview;
+        imgview = findViewById(R.id.imageView1);
+        imgview.setImageResource(imageList[i%2]);       // Image changes on every swipe
+        imgview.setRotation((float) 90.0 * r);
+    }
+
 }
