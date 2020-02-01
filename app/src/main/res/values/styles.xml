@@ -9,4 +9,5 @@
     </style>
     
     <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar"></style>
+    <style name="HomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
 </resources>
