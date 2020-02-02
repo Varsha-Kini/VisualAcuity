@@ -3,12 +3,14 @@ package com.example.android.visualacuity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.ViewFlipper;
 
 import com.github.pwittchen.swipe.library.rx2.Swipe;
 import com.github.pwittchen.swipe.library.rx2.SwipeListener;
@@ -17,16 +19,24 @@ import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
-    public int r,swipeDirection,flag=0;
-    public int rotationcount=0;
-    public int i=0;
-    public int[] dividend=new int[]{60,48,38,30,24,19,15,12,9,7,6};
-    public int[] imageList = new int[]{R.drawable.e, R.drawable.e1};    // Two images added to list
+    public Integer r = 0 ,swipeDirection = 0,flag = 0;
+    public Integer rotationCount=0;
+    public Integer i=0;
+    public double logMAR = 0;
+    public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
+    public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
+    public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
+    public int[] imageList = new int[]{R.drawable.e, R.drawable.e, R.drawable.e,
+                        R.drawable.e, R.drawable.e, R.drawable.e, R.drawable.e,
+                        R.drawable.e, R.drawable.e, R.drawable.e, R.drawable.e};    //11 images added to list
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //For vibration on swipe
+        final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         //Max Brightness
         WindowManager.LayoutParams layout = getWindow().getAttributes();
@@ -46,7 +56,8 @@ public class HomeActivity extends AppCompatActivity {
                 //info.setText("SWIPED_LEFT");
                 //viewFlipper.showNext();
                 swipeDirection=2;
-                rotationcount++;
+                rotationCount++;
+                v.vibrate(100);
                 rotation();
                 return true;
             }
@@ -59,7 +70,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override public boolean onSwipedRight(final MotionEvent event) {
                 //info.setText("SWIPED_RIGHT");
                 swipeDirection=0;
-                rotationcount++;
+                rotationCount++;
+                v.vibrate(100);
                 rotation();
                 return true;
 
@@ -72,7 +84,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override public boolean onSwipedUp(final MotionEvent event) {
                 //info.setText("SWIPED_UP");
                 swipeDirection=3;
-                rotationcount++;
+                rotationCount++;
+                v.vibrate(100);
                 rotation();
                 return true;
             }
@@ -84,7 +97,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override public boolean onSwipedDown(final MotionEvent event) {
                 //info.setText("SWIPED_DOWN");
                 swipeDirection=1;
-                rotationcount++;
+                rotationCount++;
+                v.vibrate(100);
                 rotation();
                 return true;
             }
@@ -98,29 +112,40 @@ public class HomeActivity extends AppCompatActivity {
 
     public void rotation() {
         result();
-        if(rotationcount>4)
+        if(rotationCount > 4)
         {
-            rotationcount=0;
+            rotationCount = 0;
             i++;
-            flag=0;
+            flag = 0;
+            logMAR = 0;
         }
         Random rand = new Random();
         r = rand.nextInt(4);
         ImageView imgview;
         imgview = findViewById(R.id.imageView1);
-        imgview.setImageResource(imageList[i%2]);       // Image changes on every swipe
+        imgview.setImageResource(imageList[i]);       // Image changes on every swipe
         imgview.setRotation((float) 90.0 * r);
     }
 
     public void result(){
-        if(swipeDirection!=r){
+        if(swipeDirection != r){
             flag++;
-            rotationcount--;
+            rotationCount--;
         }
-        if(flag>1){
-            String s="6/"+(Integer.toString(dividend[i]));
+        Log.i("SWIPED DIRECTION: ", Integer.toString(swipeDirection) );
+        Log.i("ROTATION: ", Integer.toString(r));
+        Log.i("I value: ", Integer.toString(i));
+        Log.i("MISTAKES: ", Integer.toString(flag));
+
+        if(flag>1 || i==10){
+            String s6 = "6/" + (int)dividend[i];
+            String s20 = "20/" + feetDividend[i];
+            logMAR = logMARList[i] + (0.02 * flag);
+            logMAR = Math.round(logMAR * 10000d) / 100000d;
             Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
-            myIntent.putExtra("key", s);
+            myIntent.putExtra("Snellen6", s6);
+            myIntent.putExtra("Snellen20", s20);
+            myIntent.putExtra("logMAR", logMAR);
             startActivity(myIntent);
         }
     }
