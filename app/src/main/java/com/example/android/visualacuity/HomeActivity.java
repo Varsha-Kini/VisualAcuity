@@ -19,10 +19,10 @@ import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
-    public Integer r = 0 ,swipeDirection = 0,flag = 0;
+    public Integer r, swipeDirection,flag = 0;
     public Integer rotationCount=0;
-    public Integer i=0;
-    public double logMAR = 0;
+    public Integer i = 0;
+    public double logMAR = 1.00;
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
     public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
@@ -132,16 +132,16 @@ public class HomeActivity extends AppCompatActivity {
             flag++;
             rotationCount--;
         }
-        Log.i("SWIPED DIRECTION: ", Integer.toString(swipeDirection) );
-        Log.i("ROTATION: ", Integer.toString(r));
-        Log.i("I value: ", Integer.toString(i));
-        Log.i("MISTAKES: ", Integer.toString(flag));
+//        Log.i("SWIPED DIRECTION: ", Integer.toString(swipeDirection) );
+//        Log.i("ROTATION: ", Integer.toString(r));
+//        Log.i("I value: ", Integer.toString(i));
+//        Log.i("MISTAKES: ", Integer.toString(flag));
 
         if(flag>1 || i==10){
             String s6 = "6/" + (int)dividend[i];
             String s20 = "20/" + feetDividend[i];
             logMAR = logMARList[i] + (0.02 * flag);
-            logMAR = Math.round(logMAR * 10000d) / 100000d;
+            logMAR = Math.round(logMAR * 10000d) / 10000d;
             Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
             myIntent.putExtra("Snellen6", s6);
             myIntent.putExtra("Snellen20", s20);
