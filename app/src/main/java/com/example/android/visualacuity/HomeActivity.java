@@ -2,12 +2,10 @@ package com.example.android.visualacuity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -26,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
     public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
-    public int[] imageList = new int[]{R.drawable.e, R.drawable.e, R.drawable.e,
+    public int[] imageList = new int[]{R.drawable.e_0, R.drawable.e, R.drawable.e,
                         R.drawable.e, R.drawable.e, R.drawable.e, R.drawable.e,
                         R.drawable.e, R.drawable.e, R.drawable.e, R.drawable.e};    //11 images added to list
 
