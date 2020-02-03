@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+
 import com.github.pwittchen.swipe.library.rx2.Swipe;
 import com.github.pwittchen.swipe.library.rx2.SwipeListener;
 
@@ -17,16 +18,16 @@ import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
-    public Integer r, swipeDirection,flag = 0;
+    public Integer r = 0, swipeDirection = 0, flag = 0;
     public Integer rotationCount=0;
     public Integer i = 0;
     public double logMAR = 1.00;
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
     public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
-    public int[] imageList = new int[]{R.drawable.e_0, R.drawable.e, R.drawable.e,
-                        R.drawable.e, R.drawable.e, R.drawable.e, R.drawable.e,
-                        R.drawable.e, R.drawable.e, R.drawable.e, R.drawable.e};    //11 images added to list
+    public int[] imageList = new int[]{R.drawable.e_0, R.drawable.e_1, R.drawable.e_2,
+                        R.drawable.e_3, R.drawable.e_4, R.drawable.e_5, R.drawable.e_6,
+                        R.drawable.e_7, R.drawable.e_8, R.drawable.e_9, R.drawable.e_10};    //11 images added to list
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
