@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -15,11 +17,12 @@ import com.github.pwittchen.swipe.library.rx2.Swipe;
 import com.github.pwittchen.swipe.library.rx2.SwipeListener;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
     public Integer r = 0, swipeDirection = 0, flag = 0;
-    public Integer rotationCount=0;
+    public Integer rotationCount = 0;
     public Integer i = 0;
     public double logMAR = 1.00;
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
@@ -118,12 +121,25 @@ public class HomeActivity extends AppCompatActivity {
             flag = 0;
             logMAR = 0;
         }
-        Random rand = new Random();
-        r = rand.nextInt(4);
-        ImageView imgview;
+        final ImageView imgview;
         imgview = findViewById(R.id.imageView1);
-        imgview.setImageResource(imageList[i]);       // Image changes on every swipe
-        imgview.setRotation((float) 90.0 * r);
+        if(i<11) {      // To avoid ArrayOutOfBounds error, this condition is required
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Random rand = new Random();
+                    r = rand.nextInt(4);
+                    imgview.setImageResource(imageList[i]);       // Image changes on every swipe
+                    imgview.setRotation((float) 90.0 * r);
+                }
+            }, 400);
+        }
+        else {
+            i = 10;
+            result();
+        }
+
     }
 
     public void result(){
@@ -131,14 +147,14 @@ public class HomeActivity extends AppCompatActivity {
             flag++;
             rotationCount--;
         }
-//        Log.i("SWIPED DIRECTION: ", Integer.toString(swipeDirection) );
+//        Log.i("SWIPED: ", Integer.toString(swipeDirection) );
 //        Log.i("ROTATION: ", Integer.toString(r));
 //        Log.i("I value: ", Integer.toString(i));
 //        Log.i("MISTAKES: ", Integer.toString(flag));
 
-        if(flag>1 || i==10){
-            String s6 = "6/" + (int)dividend[i];
-            String s20 = "20/" + feetDividend[i];
+        if(flag>2 || (i==10 && rotationCount>4)){
+            String s6 = "6/" + (int)dividend[i] + " - " + flag;
+            String s20 = "20/" + feetDividend[i] + " - " + flag;
             logMAR = logMARList[i] + (0.02 * flag);
             logMAR = Math.round(logMAR * 10000d) / 10000d;
             Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
