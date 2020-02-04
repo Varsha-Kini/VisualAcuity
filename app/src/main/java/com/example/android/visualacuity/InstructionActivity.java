@@ -60,4 +60,10 @@ public class InstructionActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent mainIntent = new Intent(InstructionActivity.this,MainActivity.class);
+        InstructionActivity.this.startActivity(mainIntent);
+        InstructionActivity.this.finish();
+    }
 }
