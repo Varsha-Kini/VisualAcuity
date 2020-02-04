@@ -2,12 +2,15 @@ package com.example.android.visualacuity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 
@@ -18,9 +21,11 @@ import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
+    public Button wrong;
     public Integer r = 0, swipeDirection = 0, flag = 0;
     public Integer rotationCount=0;
     public Integer i = 0;
+    public Integer cantseeflag = 0;
     public double logMAR = 1.00;
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
@@ -43,6 +48,15 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setAttributes(layout);//End
 
 //        final ViewFlipper viewFlipper = findViewById(R.id.ViewFlipper);
+
+        wrong = findViewById(R.id.wrong);
+        wrong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cantseeflag=1;
+                result();
+            }
+        });
 
         swipe = new Swipe();
         swipe.setListener(new SwipeListener() {
@@ -136,7 +150,7 @@ public class HomeActivity extends AppCompatActivity {
 //        Log.i("I value: ", Integer.toString(i));
 //        Log.i("MISTAKES: ", Integer.toString(flag));
 
-        if(flag>1 || i==10){
+        if(flag>1 || i==10 || cantseeflag==1){
             String s6 = "6/" + (int)dividend[i];
             String s20 = "20/" + feetDividend[i];
             logMAR = logMARList[i] + (0.02 * flag);
@@ -149,5 +163,8 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        //Do nothing
+    }
 }

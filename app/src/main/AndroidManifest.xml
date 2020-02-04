@@ -16,7 +16,7 @@
         <activity android:name=".InstructionActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/HomeActivityTheme" />
         <activity
             android:name=".HomeActivity"
             android:theme="@style/HomeActivityTheme" />

@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
-
+    public Button retake;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,5 +26,22 @@ public class ResultActivity extends AppCompatActivity {
                     + "Snellen (20ft): " + myIntent.getStringExtra("Snellen20") + "\n"
                     + "LogMAR: " + logMARValue;
         resultView.setText(r);
+
+        retake = findViewById(R.id.retake);
+        retake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainIntent = new Intent(ResultActivity.this,InstructionActivity.class);
+                ResultActivity.this.startActivity(mainIntent);
+                ResultActivity.this.finish();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent mainIntent = new Intent(ResultActivity.this,MainActivity.class);
+        ResultActivity.this.startActivity(mainIntent);
+        ResultActivity.this.finish();
     }
 }
