@@ -162,7 +162,7 @@ public class HomeActivity extends AppCompatActivity {
             rotationCount--;
         }
 
-        if(flag>2 || (i==10 && rotationCount>4)){
+        if(flag>2 || (i==10 && rotationCount>4) || cantSeeFlag==1){
             String s6 = "6/" + (int)dividend[i] + " - " + flag;
             String s20 = "20/" + feetDividend[i] + " - " + flag;
             logMAR = logMARList[i] + (0.02 * flag);
