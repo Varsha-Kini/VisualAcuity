@@ -19,10 +19,12 @@
             android:theme="@style/HomeActivityTheme" />
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/HomeActivityTheme" />
+            android:theme="@style/HomeActivityTheme"
+            android:noHistory="true" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/SplashScreen">
+            android:theme="@style/SplashScreen"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
