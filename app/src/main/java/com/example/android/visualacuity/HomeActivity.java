@@ -137,9 +137,9 @@ public class HomeActivity extends AppCompatActivity {
         Log.i("I value: ", Integer.toString(i));
         Log.i("MISTAKES: ", Integer.toString(flag));
 
-        if(flag>1 || i==10){
-            String s6 = "6/" + (int)dividend[i];
-            String s20 = "20/" + feetDividend[i];
+        if(flag>2 || i==10){
+            String s6 = "6/" + (int)dividend[i] + " - " + flag;
+            String s20 = "20/" + feetDividend[i] + " - " + flag;
             logMAR = logMARList[i] + (0.02 * flag);
             logMAR = Math.round(logMAR * 10000d) / 100000d;
             Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
