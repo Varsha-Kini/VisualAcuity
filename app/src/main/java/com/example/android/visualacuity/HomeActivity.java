@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,7 +18,6 @@ import com.github.pwittchen.swipe.library.rx2.Swipe;
 import com.github.pwittchen.swipe.library.rx2.SwipeListener;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
@@ -32,9 +30,9 @@ public class HomeActivity extends AppCompatActivity {
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
     public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
-    public int[] imageList = new int[]{R.drawable.ic_e_29, R.drawable.ic_e_23, R.drawable.ic_e_18,
-                        R.drawable.ic_e_14, R.drawable.ic_e_11, R.drawable.ic_e_9, R.drawable.ic_e_7,
-                        R.drawable.ic_e_5, R.drawable.ic_e_4, R.drawable.ic_e_3, R.drawable.ic_e_2};    //11 images added to list
+    public int[] imageList = new int[]{R.drawable.e_0, R.drawable.e_1, R.drawable.e_2,
+                        R.drawable.e_3, R.drawable.e_4, R.drawable.e_5, R.drawable.e_6,
+                        R.drawable.e_7, R.drawable.e_8, R.drawable.e_9, R.drawable.e_10};    //11 images added to list
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,7 +174,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //Do nothing
+        //Go back to home screen
         Intent mainIntent = new Intent(HomeActivity.this, MainActivity.class);
         HomeActivity.this.startActivity(mainIntent);
         HomeActivity.this.finish();
