@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.github.pwittchen.swipe.library.rx2.Swipe;
@@ -26,6 +27,9 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    private long backPressedTime;
+    private Toast backToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
+        if(backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            finish();
+        }
+        else {
+           backToast = Toast.makeText(getBaseContext(), "Press back again to exit",Toast.LENGTH_SHORT);
+           backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
+
     }
 }

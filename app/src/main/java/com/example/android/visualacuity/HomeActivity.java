@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 
@@ -21,7 +22,7 @@ import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
     private Swipe swipe;
-    public Button wrong;
+    public ImageButton wrong;
     public Integer r = 0, swipeDirection = 0, flag = 0;
     public Integer rotationCount = 0;
     public Integer i = 0;
@@ -39,6 +40,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                        |View.SYSTEM_UI_FLAG_FULLSCREEN
+                                        |View.SYSTEM_UI_FLAG_IMMERSIVE
+                                        |View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                        |View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                        |View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
         //For vibration on swipe
         final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -49,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
 
 //        final ViewFlipper viewFlipper = findViewById(R.id.ViewFlipper);
 
-        wrong = findViewById(R.id.wrong);
+        wrong =findViewById(R.id.wrong);
         wrong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

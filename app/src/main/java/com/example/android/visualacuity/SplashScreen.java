@@ -23,4 +23,9 @@ public class SplashScreen extends AppCompatActivity {
             }
         }, SPLASH_DISPLAY_LENGTH);
     }
+
+    @Override
+    public void onBackPressed() {
+        //do nothing
+    }
 }

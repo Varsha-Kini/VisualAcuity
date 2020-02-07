@@ -9,5 +9,12 @@
     </style>
     
     <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <style name="MainActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="HomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
 </resources>
