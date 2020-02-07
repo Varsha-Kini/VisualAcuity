@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     public Integer r = 0, swipeDirection = 0, flag = 0;
     public Integer rotationCount = 0;
     public Integer i = 0;
-    public Integer cantseeflag = 0;
+    public Integer cantSeeFlag = 0;
     public double logMAR = 1.00;
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         wrong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cantseeflag=1;
+                cantSeeFlag=1;
                 result();
             }
         });
@@ -161,10 +161,6 @@ public class HomeActivity extends AppCompatActivity {
             flag++;
             rotationCount--;
         }
-//        Log.i("SWIPED: ", Integer.toString(swipeDirection) );
-//        Log.i("ROTATION: ", Integer.toString(r));
-//        Log.i("I value: ", Integer.toString(i));
-//        Log.i("MISTAKES: ", Integer.toString(flag));
 
         if(flag>2 || (i==10 && rotationCount>4)){
             String s6 = "6/" + (int)dividend[i] + " - " + flag;
@@ -182,5 +178,8 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Do nothing
+        Intent mainIntent = new Intent(HomeActivity.this, MainActivity.class);
+        HomeActivity.this.startActivity(mainIntent);
+        HomeActivity.this.finish();
     }
 }
