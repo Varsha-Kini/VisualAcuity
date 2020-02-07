@@ -68,6 +68,6 @@
         android:textColor="@color/white"
         android:backgroundTint="@color/green"
         android:layout_margin="30dp"
-        android:text="Start Test" />
+        android:text="Start" />
 
 </RelativeLayout>
