@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/backgradient"
     tools:context=".InstructionActivity">
 
     <RelativeLayout
@@ -17,45 +18,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="40dp"
+            android:padding="30dp"
+            android:background="@drawable/rect"
             android:gravity="center_horizontal"
             android:text="@string/instruction1"
-            android:textSize="23dp" />
-
-        <TextView
-            android:id="@+id/instruction2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/instruction1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal"
-            android:text="@string/instruction2"
-            android:textSize="23dp" />
-
-        <TextView
-            android:id="@+id/instruction3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/instruction2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal"
-            android:text="@string/instruction3"
-            android:textSize="23dp" />
-
-        <TextView
-            android:id="@+id/instruction4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/instruction3"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal"
-            android:text="@string/instruction4"
             android:textSize="23dp" />
     </RelativeLayout>
 
