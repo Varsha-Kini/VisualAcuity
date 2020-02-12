@@ -10,192 +10,181 @@
         android:id="@+id/linearlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5">
+            android:layout_height="300dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            app:cardBackgroundColor="@color/skyblue"
+            app:cardCornerRadius="10dp">
 
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="5dp"
-                app:cardBackgroundColor="@color/skyblue"
-                app:cardCornerRadius="10dp">
+                android:layout_height="match_parent">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/symbolleft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_textview_black"
+                    android:gravity="center"
+                    android:text="L"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/symbolleft"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_textview_black"
-                        android:gravity="center"
-                        android:text="L"
-                        android:textColor="@color/white"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/snellenleft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/logmarleft"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="Snellen:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/snellenleft"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@id/logmarleft"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="40dp"
-                        android:text="Snellen:"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/snellenleftunit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/logmarleft"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_rectangle"
+                    android:padding="2dp"
+                    android:text="Metric"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
 
-                    <TextView
-                        android:id="@+id/snellenleftunit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@id/logmarleft"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/rounded_rectangle"
-                        android:padding="2dp"
-                        android:text="Metric"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/snellenleftvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/logmarleftvalue"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_toRightOf="@id/snellenleft"
+                    android:text="ABC"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/snellenleftvalue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@id/logmarleftvalue"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="40dp"
-                        android:layout_toRightOf="@id/snellenleft"
-                        android:text="ABC"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/logmarleft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="LogMAR:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/logmarleft"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="30dp"
-                        android:text="LogMAR:"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/logmarleftvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_toRightOf="@id/logmarleft"
+                    android:text="XYZ"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/logmarleftvalue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_toRightOf="@id/logmarleft"
-                        android:text="XYZ"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5">
+            android:layout_height="300dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            app:cardBackgroundColor="@color/skyblue"
+            app:cardCornerRadius="10dp">
 
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="5dp"
-                app:cardBackgroundColor="@color/skyblue"
-                app:cardCornerRadius="10dp">
+                android:layout_height="match_parent">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/symbolright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_textview_red"
+                    android:gravity="center"
+                    android:text="R"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/symbolright"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/rounded_textview_red"
-                        android:gravity="center"
-                        android:text="R"
-                        android:textColor="@color/white"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/snellenright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/logmarright"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="Snellen:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/snellenright"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@id/logmarright"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="40dp"
-                        android:text="Snellen:"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/snellenrightunit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/logmarright"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_rectangle"
+                    android:padding="2dp"
+                    android:text="Metric"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
 
-                    <TextView
-                        android:id="@+id/snellenrightunit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@id/logmarright"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/rounded_rectangle"
-                        android:padding="2dp"
-                        android:text="Metric"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/snellenrightvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/logmarrightvalue"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_toRightOf="@id/snellenright"
+                    android:text="ABC"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/snellenrightvalue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@id/logmarrightvalue"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="40dp"
-                        android:layout_toRightOf="@id/snellenright"
-                        android:text="ABC"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/logmarright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="LogMAR:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/logmarright"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="30dp"
-                        android:text="LogMAR:"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
-
-                    <TextView
-                        android:id="@+id/logmarrightvalue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_toRightOf="@id/logmarright"
-                        android:text="XYZ"
-                        android:textColor="@color/black"
-                        android:textSize="25dp" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/logmarrightvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_toRightOf="@id/logmarright"
+                    android:text="XYZ"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
     <Button
         android:id="@+id/retake"
         android:layout_width="match_parent"
@@ -203,7 +192,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:background="@drawable/button_retake"
+        android:text="Retake Test"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:text="Retake Test"/>
+        android:textStyle="bold" />
 </RelativeLayout>

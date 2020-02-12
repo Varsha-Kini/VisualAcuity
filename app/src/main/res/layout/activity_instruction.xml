@@ -33,7 +33,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:textColor="@color/white"
-        android:backgroundTint="@color/green"
+        android:background="@drawable/button_retake"
         android:layout_margin="30dp"
         android:text="Start" />
 
