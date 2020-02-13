@@ -16,7 +16,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        TextView resultView = findViewById(R.id.resultView);
+        TextView resultView = findViewById(R.id.snellenleftvalue);
         Intent myIntent = getIntent(); // this is just for example purpose
 
 //        Bundle params = new Bundle();
