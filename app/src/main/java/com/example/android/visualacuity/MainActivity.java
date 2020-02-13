@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CardView visualacuitycard = findViewById(R.id.visualacuitycard);
-        CardView colorblindcard = findViewById(R.id.colorblindcard);
+        CardView databasecard = findViewById(R.id.databasecard);
         CardView resultcard = findViewById(R.id.resultcard);
 
 
@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        colorblindcard.setOnClickListener(new View.OnClickListener() {
+        databasecard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent mainIntent = new Intent(MainActivity.this,Database.class);
+                MainActivity.this.startActivity(mainIntent);
+                MainActivity.this.finish();
 
             }
         });

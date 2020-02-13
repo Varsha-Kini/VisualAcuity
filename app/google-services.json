@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "450146570952",
+    "firebase_url": "https://visualacuity-9fd13.firebaseio.com",
+    "project_id": "visualacuity-9fd13",
+    "storage_bucket": "visualacuity-9fd13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450146570952:android:52fae10f1aa5a175144bfd",
+        "android_client_info": {
+          "package_name": "com.example.android.visualacuity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450146570952-rofu8h73d2toa2ig4dm0n7k7jhdjo7sr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.visualacuity",
+            "certificate_hash": "ea6fd7da814d40f53cdcd05548c51200a70f1887"
+          }
+        },
+        {
+          "client_id": "450146570952-u0lm8ckvva9i1p2s5atg9443f0d9s3ae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZU9AcHHZJO5K-z1tpVX3Bff3uE1f9UfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450146570952-u0lm8ckvva9i1p2s5atg9443f0d9s3ae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

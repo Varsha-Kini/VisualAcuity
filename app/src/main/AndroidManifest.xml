@@ -25,6 +25,11 @@
             android:name=".HomeActivity"
             android:noHistory="true"
             android:theme="@style/HomeActivityTheme" />
+        <activity android:name=".Database"
+            android:theme="@style/DatabaseTheme"/>
+        <activity android:name=".user"
+            android:theme="@style/UserTheme"/>
+
         <activity
             android:name=".SplashScreen"
             android:noHistory="true"

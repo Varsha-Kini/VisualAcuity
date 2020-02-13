@@ -192,7 +192,14 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:background="@drawable/button_retake"
-        android:text="Retake Test"
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="104dp"
+        android:text="Retake test"/>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD RESULT" />
 </RelativeLayout>
