@@ -52,19 +52,19 @@ public class Database extends AppCompatActivity {
         String userage=age.getText().toString().trim();
         String gender=gen.getSelectedItem().toString();
 
-        if(firstname.matches(" "))
+        if(fname.getText().toString().trim().length() == 0 )
         {
-            Toast.makeText(this,"Enter Your Name",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Enter Your First Name",Toast.LENGTH_LONG).show();
         }
-        else if (lastname.matches(" "))
+        if (lname.getText().toString().trim().length() == 0)
         {
-            Toast.makeText(this,"Enter Your Name",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_LONG).show();
         }
-        else if(userid.matches(" "))
+        else if(aadhar_number.getText().toString().trim().length()!=10 )
         {
             Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_LONG).show();
         }
-        else if (userage.matches(" "))
+        else if (age.getText().toString().trim().length()==0)
         {
             Toast.makeText(this,"Enter Your Age",Toast.LENGTH_LONG).show();
         }
