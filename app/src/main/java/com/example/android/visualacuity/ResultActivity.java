@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,16 +15,51 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        TextView resultView = findViewById(R.id.snellenleftvalue);
-        Intent myIntent = getIntent(); // this is just for example purpose
+        final TextView Lsnellen = findViewById(R.id.Lsnellen);
+        final TextView Rsnellen = findViewById(R.id.Rsnellen);
+        TextView Llogmar = findViewById(R.id.Llogmar);
+        TextView Rlogmar = findViewById(R.id.Rlogmar);
 
-//        Bundle params = new Bundle();
-        double logMARValue = myIntent.getDoubleExtra("logMAR", 0.00);
-//        double logMARValue = params.getDouble("logMAR");
-        String r = "Snellen (6m): " + myIntent.getStringExtra("Snellen6") + "\n"
-                    + "Snellen (20ft): " + myIntent.getStringExtra("Snellen20") + "\n"
-                    + "LogMAR: " + logMARValue;
-        resultView.setText(r);
+        final Intent myIntent = getIntent();
+        double[] logMARValue =new double[] {myIntent.getDoubleExtra("RlogMAR", 0.00),myIntent.getDoubleExtra("LlogMAR", 0.00)};
+        Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
+        Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
+        Rlogmar.setText(Double.toString(logMARValue[0]));
+        Llogmar.setText(Double.toString(logMARValue[1]));
+
+        TextView Runitchange = findViewById(R.id.RUnitchange);
+        TextView Lunitchange = findViewById(R.id.LUnitchange);
+
+        Runitchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen6"))
+                    Rsnellen.setText(myIntent.getStringExtra("Rsnellen20"));
+                else if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen20"))
+                    Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
+
+            }
+        });
+        Lunitchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen6"))
+                    Lsnellen.setText(myIntent.getStringExtra("Lsnellen20"));
+                else if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen20"))
+                    Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
+
+            }
+        });
+
+////        Bundle params = new Bundle();
+//        double logMARValue = myIntent.getDoubleExtra("logMAR", 0.00);
+////        double logMARValue = params.getDouble("logMAR");
+//        String r = "Snellen (6m): " + myIntent.getStringExtra("Snellen6") + "\n"
+//                    + "Snellen (20ft): " + myIntent.getStringExtra("Snellen20") + "\n"
+//                    + "LogMAR: " + logMARValue;
+//        resultView.setText(r);
+
+
 
         retake = findViewById(R.id.retake);
         retake.setOnClickListener(new View.OnClickListener() {

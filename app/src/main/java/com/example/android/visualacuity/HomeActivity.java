@@ -27,7 +27,10 @@ public class HomeActivity extends AppCompatActivity {
     public Integer rotationCount = 0;
     public Integer i = 0;
     public Integer cantSeeFlag = 0;
-    public double logMAR = 1.00;
+    public String[] s6=new String[2];
+    public String[] s20=new String[2];
+    public static Integer iteration=-1;
+    public double[] logMAR =new double[]{1.00,1.00};
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
     public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
@@ -39,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        iteration++;
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                                         |View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -139,7 +142,7 @@ public class HomeActivity extends AppCompatActivity {
             rotationCount = 0;
             i++;
             flag = 0;
-            logMAR = 0;
+            //logMAR = 0;
         }
         final ImageView imgview;
         imgview = findViewById(R.id.imageView1);
@@ -169,15 +172,30 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         if(flag>2 || (i==10 && rotationCount>4) || cantSeeFlag==1){
-            String s6 = "6/" + (int)dividend[i] + " - " + flag;
-            String s20 = "20/" + feetDividend[i] + " - " + flag;
-            logMAR = logMARList[i] + (0.02 * flag);
-            logMAR = Math.round(logMAR * 10000d) / 10000d;
-            Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
-            myIntent.putExtra("Snellen6", s6);
-            myIntent.putExtra("Snellen20", s20);
-            myIntent.putExtra("logMAR", logMAR);
-            startActivity(myIntent);
+            if(iteration==0) {
+                s6[0] = "6/" + (int) dividend[i] + " - " + flag;
+                s20[0] = "20/" + feetDividend[i] + " - " + flag;
+                logMAR[0] = logMARList[i] + (0.02 * flag);
+                logMAR[0] = Math.round(logMAR[0] * 10000d) / 10000d;
+                Intent myIntent1=new Intent(HomeActivity.this,EyeChange.class);
+                startActivity(myIntent1);
+            }
+            else if(iteration==1){
+                s6[1] = "6/" + (int) dividend[i] + " - " + flag;
+                s20[1] = "20/" + feetDividend[i] + " - " + flag;
+                logMAR[1] = logMARList[i] + (0.02 * flag);
+                logMAR[1] = Math.round(logMAR[1] * 10000d) / 10000d;
+                iteration=-1;
+                Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
+                myIntent.putExtra("Rsnellen6", s6[0]);
+                myIntent.putExtra("Rsnellen20", s20[0]);
+                myIntent.putExtra("RlogMAR", logMAR[0]);
+                myIntent.putExtra("Lsnellen6", s6[1]);
+                myIntent.putExtra("Lsnellen20", s20[1]);
+                myIntent.putExtra("LlogMAR", logMAR[1]);
+                startActivity(myIntent);
+            }
+
         }
     }
 

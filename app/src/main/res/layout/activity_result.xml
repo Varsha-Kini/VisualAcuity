@@ -47,7 +47,7 @@
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/snellenrightunit"
+                android:id="@+id/RUnitchange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -63,7 +63,7 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/snellenrightvalue"
+                android:id="@+id/Rsnellen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/symbolright"
@@ -79,7 +79,7 @@
                 android:id="@+id/logmarright"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/snellenrightunit"
+                android:layout_below="@+id/RUnitchange"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="LogMAR:"
@@ -87,10 +87,10 @@
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/logmarrightvalue"
+                android:id="@+id/Rlogmar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/snellenrightunit"
+                android:layout_below="@id/RUnitchange"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/logmarright"
                 android:text="XYZ"
@@ -135,7 +135,7 @@
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/snellenleftunit"
+                android:id="@+id/LUnitchange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -151,7 +151,7 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/snellenleftvalue"
+                android:id="@+id/Lsnellen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/symbolleft"
@@ -167,7 +167,7 @@
                 android:id="@+id/logmarleft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/snellenleftunit"
+                android:layout_below="@+id/LUnitchange"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="LogMAR:"
@@ -175,10 +175,10 @@
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/logmarleftvalue"
+                android:id="@+id/Llogmar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/snellenleftunit"
+                android:layout_below="@id/LUnitchange"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/logmarleft"
                 android:text="XYZ"
