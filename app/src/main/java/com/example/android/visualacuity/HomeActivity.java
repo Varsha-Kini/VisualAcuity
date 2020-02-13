@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -27,8 +28,8 @@ public class HomeActivity extends AppCompatActivity {
     public Integer rotationCount = 0;
     public Integer i = 0;
     public Integer cantSeeFlag = 0;
-    public String[] s6=new String[2];
-    public String[] s20=new String[2];
+    public static String[] s6=new String[2];
+    public static String[] s20=new String[2];
     public static Integer iteration=-1;
     public double[] logMAR =new double[]{1.00,1.00};
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
@@ -173,7 +174,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if(flag>2 || (i==10 && rotationCount>4) || cantSeeFlag==1){
             if(iteration==0) {
-                s6[0] = "6/" + (int) dividend[i] + " - " + flag;
+                s6[0] = "6/"+ (int) dividend[i] + " - " + flag;
                 s20[0] = "20/" + feetDividend[i] + " - " + flag;
                 logMAR[0] = logMARList[i] + (0.02 * flag);
                 logMAR[0] = Math.round(logMAR[0] * 10000d) / 10000d;
@@ -186,6 +187,7 @@ public class HomeActivity extends AppCompatActivity {
                 logMAR[1] = logMARList[i] + (0.02 * flag);
                 logMAR[1] = Math.round(logMAR[1] * 10000d) / 10000d;
                 iteration=-1;
+                Log.d("myTag", s6[0]+"s6"+s6[1]);
                 Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
                 myIntent.putExtra("Rsnellen6", s6[0]);
                 myIntent.putExtra("Rsnellen20", s20[0]);

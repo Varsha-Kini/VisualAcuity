@@ -27,26 +27,35 @@ public class ResultActivity extends AppCompatActivity {
         Rlogmar.setText(Double.toString(logMARValue[0]));
         Llogmar.setText(Double.toString(logMARValue[1]));
 
-        TextView Runitchange = findViewById(R.id.RUnitchange);
-        TextView Lunitchange = findViewById(R.id.LUnitchange);
+        final TextView Runitchange = findViewById(R.id.RUnitchange);
+        final TextView Lunitchange = findViewById(R.id.LUnitchange);
 
         Runitchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen6"))
+                {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen20"));
-                else if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen20"))
+                    Runitchange.setText("Imperial");
+                }
+                else if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen20")) {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
-
+                    Runitchange.setText("Metric");
+                }
             }
         });
         Lunitchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen6"))
+                if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen6")) {
                     Lsnellen.setText(myIntent.getStringExtra("Lsnellen20"));
+                    Lunitchange.setText("Imperial");
+                }
                 else if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen20"))
+                {
                     Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
+                    Lunitchange.setText("Metric");
+                }
 
             }
         });
