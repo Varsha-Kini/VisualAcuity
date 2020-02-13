@@ -15,8 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 
 public class Database extends AppCompatActivity {
-    EditText fname,lname,aadhar_number,age;
-    Button save_info;
+    EditText firstName, lastName, aadharNumber, age;
+    Button saveInfo;
     Spinner gen;
     DatabaseReference database;
 
@@ -24,16 +24,16 @@ public class Database extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
-        fname= findViewById(R.id.txt_first_name);
-        lname=findViewById(R.id.txt_last_name);
-        aadhar_number= findViewById(R.id.txt_user_id);
-        age= findViewById(R.id.txt_user_age);
-        save_info= findViewById(R.id.bn_save);
-        gen=findViewById(R.id.spinner_gender);
-        database= FirebaseDatabase.getInstance().getReference();
+        firstName = findViewById(R.id.txt_first_name);
+        lastName = findViewById(R.id.txt_last_name);
+        aadharNumber = findViewById(R.id.txt_user_id);
+        age = findViewById(R.id.txt_user_age);
+        saveInfo = findViewById(R.id.bn_save);
+        gen = findViewById(R.id.spinner_gender);
+        database = FirebaseDatabase.getInstance().getReference();
 
 
-        save_info.setOnClickListener(new View.OnClickListener(){
+        saveInfo.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -46,25 +46,25 @@ public class Database extends AppCompatActivity {
     }
     private void User()
     {
-        String firstname=fname.getText().toString().trim();
-        String lastname=lname.getText().toString().trim();
-        String userid=aadhar_number.getText().toString().trim();
-        String userage=age.getText().toString().trim();
-        String gender=gen.getSelectedItem().toString();
+        String firstname = firstName.getText().toString().trim();
+        String lastname = lastName.getText().toString().trim();
+        String userid = aadharNumber.getText().toString().trim();
+        String userAge = age.getText().toString().trim();
+        String gender = gen.getSelectedItem().toString();
 
-        if(fname.getText().toString().trim().length() == 0 )
+        if(firstName.getText().toString().trim().length() == 0 )
         {
             Toast.makeText(this,"Enter Your First Name",Toast.LENGTH_LONG).show();
         }
-        if (lname.getText().toString().trim().length() == 0)
+        if (lastName.getText().toString().trim().length() == 0)
         {
             Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_LONG).show();
         }
-        else if(aadhar_number.getText().toString().trim().length()!=10 )
+        else if(aadharNumber.getText().toString().trim().length() != 10)
         {
             Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_LONG).show();
         }
-        else if (age.getText().toString().trim().length()==0)
+        else if (age.getText().toString().trim().length() == 0)
         {
             Toast.makeText(this,"Enter Your Age",Toast.LENGTH_LONG).show();
         }
@@ -74,8 +74,8 @@ public class Database extends AppCompatActivity {
         else
         {
             @NotNull
-            String uid=database.push().getKey();
-            user user=new user(uid,userid,firstname,lastname,userage,gender);
+            String uid = database.push().getKey();
+            user user = new user(uid, userid, firstname, lastname, userAge, gender);
             database.child(uid).setValue(user);
             Toast.makeText(this, "User Added....", Toast.LENGTH_LONG).show();
 
