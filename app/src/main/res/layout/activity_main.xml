@@ -11,19 +11,19 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        app:cardBackgroundColor="@color/skyblue">
-    </androidx.cardview.widget.CardView>
+        app:cardBackgroundColor="@color/skyblue"></androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/visualacuitycard"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:cardBackgroundColor="@color/snowwhite">
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -45,32 +45,35 @@
                     android:text="Test eyesight"
                     android:textColor="@color/black"
                     android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:textSize="18sp"
-                    android:text="Test Distance Vision"/>
+                    android:text="Test Distance Vision"
+                    android:textSize="18sp" />
 
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/gray" />
-
+    <!--
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray" />
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/databasecard"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:cardBackgroundColor="@color/snowwhite">
+        android:layout_margin="10dp"
+
+        app:cardCornerRadius="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -87,7 +90,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:text="User Information"
                     android:textColor="@color/black"
@@ -100,26 +102,28 @@
                     android:textSize="18sp"
                     android:text="Add user information" />
 
+
             </LinearLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/gray" />
-
+    <!--
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray" />
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/resultcard"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:cardBackgroundColor="@color/snowwhite">
+        android:layout_margin="10dp"
+        app:cardCornerRadius="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -139,10 +143,10 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/gray" />
-
+    <!--
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray" />
+    -->
 </LinearLayout>
