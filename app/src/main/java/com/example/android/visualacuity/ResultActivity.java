@@ -42,6 +42,16 @@ public class ResultActivity extends AppCompatActivity {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
                     Runitchange.setText("Metric");
                 }
+
+                if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen6")) {
+                    Lsnellen.setText(myIntent.getStringExtra("Lsnellen20"));
+                    Lunitchange.setText("Imperial");
+                }
+                else if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen20"))
+                {
+                    Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
+                    Lunitchange.setText("Metric");
+                }
             }
         });
         Lunitchange.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +65,16 @@ public class ResultActivity extends AppCompatActivity {
                 {
                     Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
                     Lunitchange.setText("Metric");
+                }
+
+                if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen6"))
+                {
+                    Rsnellen.setText(myIntent.getStringExtra("Rsnellen20"));
+                    Runitchange.setText("Imperial");
+                }
+                else if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen20")) {
+                    Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
+                    Runitchange.setText("Metric");
                 }
 
             }
