@@ -77,7 +77,7 @@ public class Database extends AppCompatActivity {
             String uid = database.push().getKey();
             user user = new user(uid, userid, firstname, lastname, userAge, gender);
             database.child(uid).setValue(user);
-            Toast.makeText(this, "User Added....", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
 
         }
 

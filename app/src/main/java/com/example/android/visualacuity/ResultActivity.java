@@ -21,6 +21,65 @@ public class ResultActivity extends AppCompatActivity {
         TextView Rlogmar = findViewById(R.id.Rlogmar);
 
         final Intent myIntent = getIntent();
+        Rsnellen.setText(HomeActivity.s6[0]);
+        Lsnellen.setText(HomeActivity.s6[1]);
+        Rlogmar.setText(Double.toString(HomeActivity.logMAR[0]));
+        Llogmar.setText(Double.toString(HomeActivity.logMAR[1]));
+
+        final TextView Runitchange = findViewById(R.id.RUnitchange);
+        final TextView Lunitchange = findViewById(R.id.LUnitchange);
+
+        Runitchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Rsnellen.getText()==HomeActivity.s6[0])
+                {
+                    Rsnellen.setText(HomeActivity.s20[0]);
+                    Runitchange.setText("Imperial");
+                }
+                else if(Rsnellen.getText()==HomeActivity.s20[0]) {
+                    Rsnellen.setText(HomeActivity.s6[0]);
+                    Runitchange.setText("Metric");
+                }
+
+                if(Lsnellen.getText()==HomeActivity.s6[1])
+                {
+                    Lsnellen.setText(HomeActivity.s20[1]);
+                    Lunitchange.setText("Imperial");
+                }
+                else if(Lsnellen.getText()==HomeActivity.s20[1]) {
+                    Lsnellen.setText(HomeActivity.s6[1]);
+                    Lunitchange.setText("Metric");
+                }
+            }
+        });
+        Lunitchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Rsnellen.getText()==HomeActivity.s6[0])
+                {
+                    Rsnellen.setText(HomeActivity.s20[0]);
+                    Runitchange.setText("Imperial");
+                }
+                else if(Rsnellen.getText()==HomeActivity.s20[0]) {
+                    Rsnellen.setText(HomeActivity.s6[0]);
+                    Runitchange.setText("Metric");
+                }
+
+                if(Lsnellen.getText()==HomeActivity.s6[1])
+                {
+                    Lsnellen.setText(HomeActivity.s20[1]);
+                    Lunitchange.setText("Imperial");
+                }
+                else if(Lsnellen.getText()==HomeActivity.s20[1]) {
+                    Lsnellen.setText(HomeActivity.s6[1]);
+                    Lunitchange.setText("Metric");
+                }
+
+            }
+        });
+        /*
+        final Intent myIntent = getIntent();
         double[] logMARValue =new double[] {myIntent.getDoubleExtra("RlogMAR", 0.00),myIntent.getDoubleExtra("LlogMAR", 0.00)};
         Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
         Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
@@ -79,17 +138,7 @@ public class ResultActivity extends AppCompatActivity {
 
             }
         });
-
-////        Bundle params = new Bundle();
-//        double logMARValue = myIntent.getDoubleExtra("logMAR", 0.00);
-////        double logMARValue = params.getDouble("logMAR");
-//        String r = "Snellen (6m): " + myIntent.getStringExtra("Snellen6") + "\n"
-//                    + "Snellen (20ft): " + myIntent.getStringExtra("Snellen20") + "\n"
-//                    + "LogMAR: " + logMARValue;
-//        resultView.setText(r);
-
-
-
+        */
         retake = findViewById(R.id.retake);
         retake.setOnClickListener(new View.OnClickListener() {
             @Override

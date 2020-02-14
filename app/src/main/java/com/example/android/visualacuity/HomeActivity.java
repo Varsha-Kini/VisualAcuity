@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     public static String[] s6=new String[2];
     public static String[] s20=new String[2];
     public static Integer iteration=-1;
-    public double[] logMAR =new double[]{1.00,1.00};
+    public static double[] logMAR =new double[]{1.00,1.00};
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
     public int[] feetDividend = new int[] {200, 160, 125, 100, 80, 63, 50, 40, 32, 25, 20};
     public double[] logMARList = new double[]{1.00, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0};
@@ -191,12 +191,12 @@ public class HomeActivity extends AppCompatActivity {
                 iteration=-1;
                 Log.d("myTag", s6[0]+"s6"+s6[1]);
                 Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
-                myIntent.putExtra("Rsnellen6", s6[0]);
-                myIntent.putExtra("Rsnellen20", s20[0]);
-                myIntent.putExtra("RlogMAR", logMAR[0]);
-                myIntent.putExtra("Lsnellen6", s6[1]);
-                myIntent.putExtra("Lsnellen20", s20[1]);
-                myIntent.putExtra("LlogMAR", logMAR[1]);
+//                myIntent.putExtra("Rsnellen6", s6[0]);
+//                myIntent.putExtra("Rsnellen20", s20[0]);
+//                myIntent.putExtra("RlogMAR", logMAR[0]);
+//                myIntent.putExtra("Lsnellen6", s6[1]);
+//                myIntent.putExtra("Lsnellen20", s20[1]);
+//                myIntent.putExtra("LlogMAR", logMAR[1]);
                 startActivity(myIntent);
             }
 
