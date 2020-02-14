@@ -36,8 +36,6 @@ public class Database extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference();
         Intent intent = new Intent(this, AddResult.class);
         intent.putStringArrayListExtra("key",list);
-        startActivity(intent);
-
 
         saveInfo.setOnClickListener(new View.OnClickListener(){
 
