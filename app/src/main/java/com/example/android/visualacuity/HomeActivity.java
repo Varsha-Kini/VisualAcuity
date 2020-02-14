@@ -180,8 +180,8 @@ public class HomeActivity extends AppCompatActivity {
                 logMAR[0] = logMARList[i] + (0.02 * flag);
                 logMAR[0] = Math.round(logMAR[0] * 10000d) / 10000d;
                 Intent myIntent1=new Intent(HomeActivity.this,EyeChange.class);
-                HomeActivity.this.startActivity(myIntent1);
-                HomeActivity.this.finish();
+                startActivity(myIntent1);
+               
             }
             else if(iteration==1){
                 s6[1] = "6/" + (int) dividend[i] + " - " + flag;
@@ -197,8 +197,7 @@ public class HomeActivity extends AppCompatActivity {
                 myIntent.putExtra("Lsnellen6", s6[1]);
                 myIntent.putExtra("Lsnellen20", s20[1]);
                 myIntent.putExtra("LlogMAR", logMAR[1]);
-                HomeActivity.this.startActivity(myIntent);
-                HomeActivity.this.finish();
+                startActivity(myIntent);
             }
 
         }
