@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
-    public Button retake;
+    public Button retake,save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,10 +85,8 @@ public class ResultActivity extends AppCompatActivity {
         Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
         Rlogmar.setText(Double.toString(logMARValue[0]));
         Llogmar.setText(Double.toString(logMARValue[1]));
-
         final TextView Runitchange = findViewById(R.id.RUnitchange);
         final TextView Lunitchange = findViewById(R.id.LUnitchange);
-
         Runitchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,7 +99,6 @@ public class ResultActivity extends AppCompatActivity {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
                     Runitchange.setText("Metric");
                 }
-
                 if(Lsnellen.getText()==myIntent.getStringExtra("Lsnellen6")) {
                     Lsnellen.setText(myIntent.getStringExtra("Lsnellen20"));
                     Lunitchange.setText("Imperial");
@@ -125,7 +122,6 @@ public class ResultActivity extends AppCompatActivity {
                     Lsnellen.setText(myIntent.getStringExtra("Lsnellen6"));
                     Lunitchange.setText("Metric");
                 }
-
                 if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen6"))
                 {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen20"));
@@ -135,7 +131,6 @@ public class ResultActivity extends AppCompatActivity {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
                     Runitchange.setText("Metric");
                 }
-
             }
         });
         */
@@ -144,6 +139,16 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mainIntent = new Intent(ResultActivity.this,InstructionActivity.class);
+                ResultActivity.this.startActivity(mainIntent);
+                ResultActivity.this.finish();
+            }
+        });
+
+        save=findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainIntent = new Intent(ResultActivity.this,AddResult.class);
                 ResultActivity.this.startActivity(mainIntent);
                 ResultActivity.this.finish();
             }

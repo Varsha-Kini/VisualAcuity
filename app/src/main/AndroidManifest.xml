@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_eye_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EyeChange"
-            android:theme="@style/MainActivityTheme"></activity>
+        <activity android:name=".AddResult"></activity>
+        <activity
+            android:name=".EyeChange"
+            android:theme="@style/MainActivityTheme" />
         <activity
             android:name=".ResultActivity"
             android:theme="@style/MainActivityTheme" />
