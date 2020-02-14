@@ -1,7 +1,7 @@
 package com.example.android.visualacuity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,11 +14,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 
+import java.util.ArrayList;
+
 public class Database extends AppCompatActivity {
     EditText firstName, lastName, aadharNumber, age;
     Button saveInfo;
     Spinner gen;
     DatabaseReference database;
+    ArrayList<String> list=new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,9 @@ public class Database extends AppCompatActivity {
         saveInfo = findViewById(R.id.bn_save);
         gen = findViewById(R.id.spinner_gender);
         database = FirebaseDatabase.getInstance().getReference();
+        Intent intent = new Intent(Database.this, AddResult.class);
+        intent.putStringArrayListExtra("key",list);
+        startActivity(intent);
 
 
         saveInfo.setOnClickListener(new View.OnClickListener(){
@@ -38,6 +44,10 @@ public class Database extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 User();
+                firstName.setText("");
+                lastName.setText("");
+                aadharNumber.setText("");
+                age.setText("");
 
             }
         });
@@ -47,8 +57,10 @@ public class Database extends AppCompatActivity {
     private void User()
     {
         String firstname = firstName.getText().toString().trim();
+
         String lastname = lastName.getText().toString().trim();
         String userid = aadharNumber.getText().toString().trim();
+        list.add(userid);
         String userAge = age.getText().toString().trim();
         String gender = gen.getSelectedItem().toString();
 
@@ -60,11 +72,11 @@ public class Database extends AppCompatActivity {
         {
             Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_LONG).show();
         }
-        else if(aadharNumber.getText().toString().trim().length() != 10)
+        if(aadharNumber.getText().toString().trim().length() != 10)
         {
             Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_LONG).show();
         }
-        else if (age.getText().toString().trim().length() == 0)
+        if (age.getText().toString().trim().length() == 0)
         {
             Toast.makeText(this,"Enter Your Age",Toast.LENGTH_LONG).show();
         }
