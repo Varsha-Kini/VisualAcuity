@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class EyeChange extends AppCompatActivity {
 
@@ -24,5 +25,11 @@ public class EyeChange extends AppCompatActivity {
                 EyeChange.this.finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        //do nothing
+        Toast.makeText(getBaseContext(), "Error: Test not completed",Toast.LENGTH_SHORT).show();
     }
 }

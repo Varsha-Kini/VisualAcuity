@@ -16,7 +16,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
-        app:cardBackgroundColor="@color/skyblue"
+        app:cardBackgroundColor="@color/newwhite"
         app:cardCornerRadius="10dp">
 
         <RelativeLayout
@@ -29,10 +29,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rounded_textview_red"
+                android:background="@drawable/rounded_textview_blue"
                 android:gravity="center"
                 android:text="R"
-                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColor="@color/newwhite"
                 android:textSize="25dp" />
 
             <TextView
@@ -104,7 +105,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
-        app:cardBackgroundColor="@color/skyblue"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardCornerRadius="10dp">
 
         <RelativeLayout
@@ -117,10 +118,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rounded_textview_black"
+                android:background="@drawable/rounded_textview_white"
                 android:gravity="center"
                 android:text="L"
-                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="25dp" />
 
             <TextView
@@ -131,7 +133,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="10dp"
                 android:text="Snellen:"
-                android:textColor="@color/black"
+                android:textColor="@color/newwhite"
                 android:textSize="25dp" />
 
             <TextView
@@ -147,7 +149,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:text="Metric"
-                android:textColor="@color/white"
+                android:textColor="@color/newwhite"
                 android:textSize="16dp" />
 
             <TextView
@@ -160,7 +162,7 @@
                 android:layout_marginBottom="40dp"
                 android:layout_toRightOf="@id/snellenleft"
                 android:text="ABC"
-                android:textColor="@color/black"
+                android:textColor="@color/newwhite"
                 android:textSize="25dp" />
 
             <TextView
@@ -171,7 +173,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="LogMAR:"
-                android:textColor="@color/black"
+                android:textColor="@color/newwhite"
                 android:textSize="25dp" />
 
             <TextView
@@ -182,7 +184,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/logmarleft"
                 android:text="XYZ"
-                android:textColor="@color/black"
+                android:textColor="@color/newwhite"
                 android:textSize="25dp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -196,16 +198,23 @@
         android:layout_marginTop="104dp"
         android:background="@drawable/button_retake"
         android:text="Retake test"
-        android:textColor="@color/white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/newwhite"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/save"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:textColor="@color/white"
+        android:textColor="#74bcef"
         android:layout_above="@id/retake"
-        android:background="@drawable/button_retake"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/button_add_result"
         android:text="ADD RESULT" />
 </RelativeLayout>

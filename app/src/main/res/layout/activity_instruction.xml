@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backgradient"
     tools:context=".InstructionActivity">
 
     <RelativeLayout
@@ -33,7 +32,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:textColor="@color/white"
-        android:background="@drawable/button_retake"
+        android:background="@drawable/button_start"
         android:layout_margin="30dp"
         android:text="Start" />
 
