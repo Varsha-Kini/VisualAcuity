@@ -14,6 +14,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".InitialEye"
             android:theme="@style/MainActivityTheme"></activity>
+        <activity android:name=".AddResult"
+            android:theme="@style/MainActivityTheme"></activity>
         <activity
             android:name=".EyeChange"
             android:theme="@style/MainActivityTheme" />
