@@ -33,12 +33,10 @@ public class ResultActivity extends AppCompatActivity {
         Runitchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen6"))
-                {
+                if (Rsnellen.getText() == myIntent.getStringExtra("Rsnellen6")) {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen20"));
                     Runitchange.setText("Imperial");
-                }
-                else if(Rsnellen.getText()==myIntent.getStringExtra("Rsnellen20")) {
+                } else if (Rsnellen.getText() == myIntent.getStringExtra("Rsnellen20")) {
                     Rsnellen.setText(myIntent.getStringExtra("Rsnellen6"));
                     Runitchange.setText("Metric");
                 }

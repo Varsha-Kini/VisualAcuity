@@ -11,6 +11,7 @@
     <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar"></style>
     <style name="DatabaseTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
     <style name="UserTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+    <style name="AddResultTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
 
     <style name="MainActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>

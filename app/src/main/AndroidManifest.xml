@@ -20,6 +20,7 @@
         <activity
             android:name=".InstructionActivity"
             android:theme="@style/MainActivityTheme" />
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/MainActivityTheme" />
@@ -30,6 +31,9 @@
         <activity
             android:name=".Database"
             android:theme="@style/MainActivityTheme" />
+        <activity
+            android:name=".AddResult"
+            android:theme="@style/AddResultTheme" />
         <activity
             android:name=".user"
             android:theme="@style/UserTheme" />
