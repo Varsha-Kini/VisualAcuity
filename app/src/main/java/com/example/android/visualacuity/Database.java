@@ -14,9 +14,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 
+import at.markushi.ui.CircleButton;
+
 public class Database extends AppCompatActivity {
     EditText firstName, lastName, aadharNumber, age;
-    Button saveInfo;
+    CircleButton saveInfo;
     Spinner gen;
     DatabaseReference database;
 
