@@ -19,6 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MVA 5"
+                android:fontFamily="sans-serif-thin"
                 android:textColor="@color/newwhite"
                 android:textSize="110dp"
                 android:layout_marginLeft="8dp"
