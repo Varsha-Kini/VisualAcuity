@@ -2,6 +2,7 @@ package com.example.android.visualacuity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +20,11 @@ import java.util.ArrayList;
 
 public class Database extends AppCompatActivity {
     EditText firstName, lastName, aadharNumber, age;
+    static String firstname,lastname,userAge, gender,userid;
     CircleButton saveInfo;
     Spinner gen;
-    DatabaseReference database;
+    static DatabaseReference database;
+    public static int Detailsflag=1;
     public static ArrayList<String> list= new ArrayList<>();
 
     @Override
@@ -43,25 +46,27 @@ public class Database extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 User();
-                firstName.setText("");
-                lastName.setText("");
-                aadharNumber.setText("");
-                age.setText("");
+                if(Detailsflag==0) {
+                    firstName.setText("");
+                    lastName.setText("");
+                    aadharNumber.setText("");
+                    age.setText("");
+                    Detailsflag=1;
+                }
 
             }
         });
 
 
     }
-    private void User()
+    public void User()
     {
-        String firstname = firstName.getText().toString().trim();
-
-        String lastname = lastName.getText().toString().trim();
-        String userid = aadharNumber.getText().toString().trim();
+        firstname = firstName.getText().toString().trim();
+        lastname = lastName.getText().toString().trim();
+        userid = aadharNumber.getText().toString().trim();
         list.add(userid);
-        String userAge = age.getText().toString().trim();
-        String gender = gen.getSelectedItem().toString();
+        userAge = age.getText().toString().trim();
+        gender = gen.getSelectedItem().toString();
 
         if(firstName.getText().toString().trim().length() == 0 )
         {
@@ -84,16 +89,26 @@ public class Database extends AppCompatActivity {
 
         else
         {
-            @NotNull
-            String uid = database.push().getKey();
-            user user = new user(uid, userid, firstname, lastname, userAge, gender);
-            database.child(uid).setValue(user);
-            Toast.makeText(this, "User Added....", Toast.LENGTH_LONG).show();
+            Detailsflag=0;
+//            @NotNull
+//            String uid = database.push().getKey();
+//            user user = new user(uid, userid, firstname, lastname, userAge, gender);
+//            database.child(uid).setValue(user);
+              Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
 
         }
 
 
     }
+
+    public static void putUser(String left,String right){
+        String uid = database.push().getKey();
+        user user = new user(uid, userid, firstname, lastname, userAge, gender,left,right);
+        database.child(uid).setValue(user);
+        Log.d("myTag","User added");
+        //Toast.makeText(Database.this, "User Added", Toast.LENGTH_LONG).show();
+    }
+
     @Override
     public void onBackPressed() {
         Intent mainIntent = new Intent(Database.this,MainActivity.class);

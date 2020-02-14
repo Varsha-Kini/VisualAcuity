@@ -156,6 +156,7 @@ public class ResultActivity extends AppCompatActivity {
                     Toast.makeText(ResultActivity.this, "Please take the Test first", Toast.LENGTH_LONG).show();
                 }
                 else {
+
                     Intent mainIntent = new Intent(ResultActivity.this, AddResult.class);
                     ResultActivity.this.startActivity(mainIntent);
                     ResultActivity.this.finish();
