@@ -35,7 +35,7 @@ public class InstructionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent mainIntent = new Intent(InstructionActivity.this,HomeActivity.class);
+                Intent mainIntent = new Intent(InstructionActivity.this,InitialEye.class);
                 InstructionActivity.this.startActivity(mainIntent);
                 InstructionActivity.this.finish();
             }
