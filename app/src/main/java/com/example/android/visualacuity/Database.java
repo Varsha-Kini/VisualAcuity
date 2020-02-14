@@ -21,7 +21,7 @@ public class Database extends AppCompatActivity {
     Button saveInfo;
     Spinner gen;
     DatabaseReference database;
-    ArrayList<String> list= new ArrayList<>();
+    public static ArrayList<String> list= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,8 @@ public class Database extends AppCompatActivity {
         saveInfo = findViewById(R.id.bn_save);
         gen = findViewById(R.id.spinner_gender);
         database = FirebaseDatabase.getInstance().getReference();
-        Intent intent = new Intent(this, AddResult.class);
-        intent.putStringArrayListExtra("key",list);
+        //Intent intent = new Intent(this, AddResult.class);
+        //intent.putStringArrayListExtra("key",list);
 
         saveInfo.setOnClickListener(new View.OnClickListener(){
 
@@ -91,6 +91,13 @@ public class Database extends AppCompatActivity {
 
         }
 
+
+    }
+    @Override
+    public void onBackPressed() {
+        Intent mainIntent = new Intent(Database.this,MainActivity.class);
+        Database.this.startActivity(mainIntent);
+        Database.this.finish();
     }
 
 }
