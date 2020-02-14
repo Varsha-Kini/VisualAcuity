@@ -1,5 +1,6 @@
 package com.example.android.visualacuity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,7 +44,15 @@ public class AddResult extends AppCompatActivity {
                         Intent i=new Intent(AddResult.this,MainActivity.class);
                         AddResult.this.startActivity(i);
                         AddResult.this.finish();
+                        HomeActivity.s6[0]=null;
+                        HomeActivity.s6[1]=null;
+                        HomeActivity.s20[0]=null;
+                        HomeActivity.s20[1]=null;
+                        HomeActivity.logMAR[0]=1.00;
+                        HomeActivity.logMAR[1]=1.00;
+                        HomeActivity.Taketestfirst=1;
                         flag=1;
+                        Toast.makeText(AddResult.this, "Data Entered Successful", Toast.LENGTH_LONG).show();
                         Log.d("myTag", "Exist");
                         break;
                     }
@@ -51,6 +60,7 @@ public class AddResult extends AppCompatActivity {
                 }
                 if(flag==0){
                     Log.d("myTag", "Doesnot");
+                    Toast.makeText(AddResult.this, "User does not exit, please fill the details.", Toast.LENGTH_LONG).show();
                     Intent i=new Intent(AddResult.this,Database.class);
                     AddResult.this.startActivity(i);
                     AddResult.this.finish();

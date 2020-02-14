@@ -4,18 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
     public Button retake,save;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        final TextView Lsnellen = findViewById(R.id.Lsnellen);
+        final  TextView Lsnellen = findViewById(R.id.Lsnellen);
         final TextView Rsnellen = findViewById(R.id.Rsnellen);
         TextView Llogmar = findViewById(R.id.Llogmar);
         TextView Rlogmar = findViewById(R.id.Rlogmar);
@@ -148,9 +151,15 @@ public class ResultActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(ResultActivity.this,AddResult.class);
-                ResultActivity.this.startActivity(mainIntent);
-                ResultActivity.this.finish();
+                Log.d("myTag",Integer.toString(HomeActivity.Taketestfirst));
+                if(HomeActivity.Taketestfirst==1) {
+                    Toast.makeText(ResultActivity.this, "Please take the Test first", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent mainIntent = new Intent(ResultActivity.this, AddResult.class);
+                    ResultActivity.this.startActivity(mainIntent);
+                    ResultActivity.this.finish();
+                }
             }
         });
     }

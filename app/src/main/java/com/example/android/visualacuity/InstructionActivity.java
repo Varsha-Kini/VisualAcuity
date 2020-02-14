@@ -34,6 +34,7 @@ public class InstructionActivity extends AppCompatActivity {
         next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent mainIntent = new Intent(InstructionActivity.this,HomeActivity.class);
                 InstructionActivity.this.startActivity(mainIntent);
                 InstructionActivity.this.finish();

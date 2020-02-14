@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         CardView visualacuitycard = findViewById(R.id.visualacuitycard);
         CardView databasecard = findViewById(R.id.databasecard);
         CardView resultcard = findViewById(R.id.resultcard);

@@ -22,6 +22,7 @@ import com.github.pwittchen.swipe.library.rx2.SwipeListener;
 import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
+    public static int Taketestfirst=1;
     private Swipe swipe;
     public ImageButton wrong;
     public Integer r = 0, swipeDirection = 0, flag = 0;
@@ -190,6 +191,7 @@ public class HomeActivity extends AppCompatActivity {
                 logMAR[1] = Math.round(logMAR[1] * 10000d) / 10000d;
                 iteration=-1;
                 Log.d("myTag", s6[0]+"s6"+s6[1]);
+                HomeActivity.Taketestfirst=0;
                 Intent myIntent = new Intent(HomeActivity.this, ResultActivity.class);
 //                myIntent.putExtra("Rsnellen6", s6[0]);
 //                myIntent.putExtra("Rsnellen20", s20[0]);
