@@ -25,13 +25,15 @@ public class ResultActivity extends AppCompatActivity {
         TextView LPower = findViewById(R.id.left_approx_value);
         TextView RPower = findViewById(R.id.right_approx_value);
 
+//        String str = "\u00B1"+getContext().getString(R.string.plusminus);
+
         final Intent myIntent = getIntent();
         Rsnellen.setText(HomeActivity.s6[0]);
         Lsnellen.setText(HomeActivity.s6[1]);
         Rlogmar.setText(Double.toString(HomeActivity.logMAR[0]));
         Llogmar.setText(Double.toString(HomeActivity.logMAR[1]));
-        LPower.setText(Double.toString(HomeActivity.power[1]) + "D"+R.string.plusminus);
-        RPower.setText(Double.toString(HomeActivity.power[0])  + "D"+R.string.plusminus);
+        LPower.setText(Double.toString(HomeActivity.power[1]) + " \u00B1 0.25D");
+        RPower.setText(Double.toString(HomeActivity.power[0])  + " \u00B1 0.25D");
 
         final TextView Runitchange = findViewById(R.id.RUnitchange);
         final TextView Lunitchange = findViewById(R.id.LUnitchange);
