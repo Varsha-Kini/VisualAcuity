@@ -176,6 +176,9 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         if(flag>2 || (i==10 && rotationCount>4) || cantSeeFlag==1){
+            if(cantSeeFlag==1){
+                flag=2;
+            }
             if(iteration==0) {
 //                Log.i("Div: " + dividend[i]);
                 Double PR = (-0.052244 * dividend[i]) - 0.018535;
@@ -203,6 +206,7 @@ public class HomeActivity extends AppCompatActivity {
                
             }
             else if(iteration==1){
+
                 Double PR = (-0.052244 * dividend[i]) - 0.018535;
 //                Log.i("PR = ", PR.toString());
                 Double LDecimalPart = 0.0;
