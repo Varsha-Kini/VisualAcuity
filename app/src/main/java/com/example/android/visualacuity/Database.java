@@ -101,9 +101,9 @@ public class Database extends AppCompatActivity {
 
     }
 
-    public static void putUser(String left,String right){
+    public static void putUser(String left,String right,String ld,String rd){
         String uid = database.push().getKey();
-        user user = new user(uid, userid, firstname, lastname, userAge, gender,left,right);
+        user user = new user(uid, userid, firstname, lastname, userAge, gender,left,right,ld,rd);
         database.child(uid).setValue(user);
         Log.d("myTag","User added");
         //Toast.makeText(Database.this, "User Added", Toast.LENGTH_LONG).show();

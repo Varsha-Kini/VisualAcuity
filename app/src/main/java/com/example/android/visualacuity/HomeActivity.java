@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     public Integer cantSeeFlag = 0;
     public static String[] s6=new String[2];
     public static String[] s20=new String[2];
-    public static Double power[] = new Double[2];
+    public static double[] power = new double[]{0,0};
     public static Integer iteration=-1;
     public static double[] logMAR =new double[]{1.00,1.00};
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
