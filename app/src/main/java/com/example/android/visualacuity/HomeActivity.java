@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     public Integer cantSeeFlag = 0;
     public static String[] s6=new String[2];
     public static String[] s20=new String[2];
+    public static Double power[] = new Double[2];
     public static Integer iteration=-1;
     public static double[] logMAR =new double[]{1.00,1.00};
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
@@ -180,6 +181,18 @@ public class HomeActivity extends AppCompatActivity {
                 s20[0] = "20/" + feetDividend[i] + " - " + flag;
                 logMAR[0] = logMARList[i] + (0.02 * flag);
                 logMAR[0] = Math.round(logMAR[0] * 10000d) / 10000d;
+                power[0] = (-0.05224 * dividend[i])- 0.01853;
+                Double LdecimalPart;
+                LdecimalPart = power[0] - power[0].intValue();
+                if(LdecimalPart < 0.25)
+                    power[0] = power[0].intValue() + 0.0;
+                else if (LdecimalPart >= 0.25 && LdecimalPart < 0.5)
+                    power[0] = power[0].intValue() + 0.25;
+                else if (LdecimalPart >= 0.50 && LdecimalPart < 0.75)
+                    power[0] = power[0].intValue() + 0.50;
+                else
+                    power[0] = power[0].intValue() + 0.75;
+//                Math.round(power[0], 2);
                 Intent myIntent1=new Intent(HomeActivity.this,EyeChange.class);
                 startActivity(myIntent1);
                
@@ -189,6 +202,17 @@ public class HomeActivity extends AppCompatActivity {
                 s20[1] = "20/" + feetDividend[i] + " - " + flag;
                 logMAR[1] = logMARList[i] + (0.02 * flag);
                 logMAR[1] = Math.round(logMAR[1] * 10000d) / 10000d;
+                power[1] = (-0.05224 * dividend[i])- 0.01853;
+                Double RdecimalPart;
+                RdecimalPart = power[1] - power[0].intValue();
+                if(RdecimalPart < 0.25)
+                    power[1] = power[0].intValue() + 0.0;
+                else if (RdecimalPart >= 0.25 && RdecimalPart < 0.5)
+                    power[1] = power[1].intValue() + 0.25;
+                else if (RdecimalPart >= 0.50 && RdecimalPart < 0.75)
+                    power[1] = power[1].intValue() + 0.50;
+                else
+                    power[1] = power[1].intValue() + 0.75;
                 iteration=-1;
                 Log.d("myTag", s6[0]+"s6"+s6[1]);
                 HomeActivity.Taketestfirst=0;

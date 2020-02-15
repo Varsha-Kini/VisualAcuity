@@ -22,12 +22,16 @@ public class ResultActivity extends AppCompatActivity {
         final TextView Rsnellen = findViewById(R.id.Rsnellen);
         TextView Llogmar = findViewById(R.id.Llogmar);
         TextView Rlogmar = findViewById(R.id.Rlogmar);
+        TextView LPower = findViewById(R.id.left_approx_value);
+        TextView RPower = findViewById(R.id.right_approx_value);
 
         final Intent myIntent = getIntent();
         Rsnellen.setText(HomeActivity.s6[0]);
         Lsnellen.setText(HomeActivity.s6[1]);
         Rlogmar.setText(Double.toString(HomeActivity.logMAR[0]));
         Llogmar.setText(Double.toString(HomeActivity.logMAR[1]));
+        LPower.setText(HomeActivity.power[0].toString() + "D");
+        RPower.setText(HomeActivity.power[1].toString() + "D");
 
         final TextView Runitchange = findViewById(R.id.RUnitchange);
         final TextView Lunitchange = findViewById(R.id.LUnitchange);
