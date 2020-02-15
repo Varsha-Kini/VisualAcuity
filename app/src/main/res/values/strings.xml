@@ -2,9 +2,11 @@
     <string name="app_name">Visual Acuity</string>
     <string name="instruction1">1.Ask the patient to sit down&lt;br>&lt;br>2.Make sure you are holding the device at &lt;b>patient\'s eye level&lt;/b>&lt;br>&lt;br>3.Measure &lt;b>2 metres&lt;/b>  between you and the patient&lt;br>&lt;br>4.Ask the patient to &lt;b>cover right eye with the palm&lt;/b> of their hand&lt;br>&lt;br>5.Ask the patient to &lt;b>point in the direction of letter "E" &lt;/b>is facing</string>
     <string name="wrong">\u2716</string>
+    <string name="plusminus">\u00B1</string>
     <string-array name="gender">
         <item>Male</item>
         <item>Female</item>
+        <item>Others</item>
     </string-array>
 
 

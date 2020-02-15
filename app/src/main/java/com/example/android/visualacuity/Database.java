@@ -23,6 +23,7 @@ public class Database extends AppCompatActivity {
     static String firstname,lastname,userAge, gender,userid;
     CircleButton saveInfo;
     Spinner gen;
+    private Toast errorToast;
     static DatabaseReference database;
     public static int Detailsflag=1;
     public static ArrayList<String> list= new ArrayList<>();
@@ -70,24 +71,32 @@ public class Database extends AppCompatActivity {
 
         if(firstName.getText().toString().trim().length() == 0 )
         {
-            Toast.makeText(this,"Enter Your First Name",Toast.LENGTH_LONG).show();
+            errorToast = Toast.makeText(this,"Enter Your First Name",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
         if (lastName.getText().toString().trim().length() == 0)
         {
-            Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_LONG).show();
+            errorToast = Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
         if(aadharNumber.getText().toString().trim().length() != 10)
         {
-            Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_LONG).show();
+           errorToast = Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
         if (age.getText().toString().trim().length() == 0)
         {
-            Toast.makeText(this,"Enter Your Age",Toast.LENGTH_LONG).show();
+            errorToast = Toast.makeText(this,"Enter Your Age",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
 
 
 
-        else
+        if(Detailsflag==0)
         {
             Detailsflag=0;
 //            @NotNull
@@ -95,7 +104,7 @@ public class Database extends AppCompatActivity {
 //            user user = new user(uid, userid, firstname, lastname, userAge, gender);
 //            database.child(uid).setValue(user);
               Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
-
+            errorToast.cancel();
         }
 
 
@@ -106,7 +115,7 @@ public class Database extends AppCompatActivity {
         user user = new user(uid, userid, firstname, lastname, userAge, gender,left,right,ld,rd);
         database.child(uid).setValue(user);
         Log.d("myTag","User added");
-        //Toast.makeText(Database.this, "User Added", Toast.LENGTH_LONG).show();
+        //Toast.makeText(Database.this, "User Added", Toast.LENGTH_SHORT).show();
     }
 
     @Override

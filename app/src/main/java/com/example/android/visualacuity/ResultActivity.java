@@ -30,8 +30,8 @@ public class ResultActivity extends AppCompatActivity {
         Lsnellen.setText(HomeActivity.s6[1]);
         Rlogmar.setText(Double.toString(HomeActivity.logMAR[0]));
         Llogmar.setText(Double.toString(HomeActivity.logMAR[1]));
-        LPower.setText(Double.toString(HomeActivity.power[1]) + "D");
-        RPower.setText(Double.toString(HomeActivity.power[0])  + "D");
+        LPower.setText(Double.toString(HomeActivity.power[1]) + "D"+R.string.plusminus);
+        RPower.setText(Double.toString(HomeActivity.power[0])  + "D"+R.string.plusminus);
 
         final TextView Runitchange = findViewById(R.id.RUnitchange);
         final TextView Lunitchange = findViewById(R.id.LUnitchange);
