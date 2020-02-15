@@ -25,7 +25,7 @@ public class Database extends AppCompatActivity {
     Spinner gen;
     private Toast errorToast;
     static DatabaseReference database;
-    public static int Detailsflag=1;
+    public static int Detailsflag=0;
     public static ArrayList<String> list= new ArrayList<>();
 
     @Override
@@ -81,7 +81,7 @@ public class Database extends AppCompatActivity {
             errorToast.show();
             Detailsflag=1;
         }
-        if(aadharNumber.getText().toString().trim().length() != 10)
+        if(aadharNumber.getText().toString().trim().length() != 12)
         {
            errorToast = Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_SHORT);
             errorToast.show();
