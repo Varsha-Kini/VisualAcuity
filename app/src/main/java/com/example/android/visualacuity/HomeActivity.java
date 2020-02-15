@@ -182,13 +182,13 @@ public class HomeActivity extends AppCompatActivity {
                 logMAR[0] = logMARList[i] + (0.02 * flag);
                 logMAR[0] = Math.round(logMAR[0] * 10000d) / 10000d;
                 power[0] = (-0.05224 * dividend[i])- 0.01853;
-                Double LdecimalPart;
-                LdecimalPart = power[0] - power[0].intValue();
-                if(LdecimalPart < 0.25)
+                Double RDecimalPart;
+                RDecimalPart = power[0] - power[0].intValue();
+                if(RDecimalPart < 0.25)
                     power[0] = power[0].intValue() + 0.0;
-                else if (LdecimalPart >= 0.25 && LdecimalPart < 0.5)
+                else if (RDecimalPart >= 0.25 && RDecimalPart < 0.5)
                     power[0] = power[0].intValue() + 0.25;
-                else if (LdecimalPart >= 0.50 && LdecimalPart < 0.75)
+                else if (RDecimalPart >= 0.50 && RDecimalPart < 0.75)
                     power[0] = power[0].intValue() + 0.50;
                 else
                     power[0] = power[0].intValue() + 0.75;
@@ -203,13 +203,13 @@ public class HomeActivity extends AppCompatActivity {
                 logMAR[1] = logMARList[i] + (0.02 * flag);
                 logMAR[1] = Math.round(logMAR[1] * 10000d) / 10000d;
                 power[1] = (-0.05224 * dividend[i])- 0.01853;
-                Double RdecimalPart;
-                RdecimalPart = power[1] - power[0].intValue();
-                if(RdecimalPart < 0.25)
-                    power[1] = power[0].intValue() + 0.0;
-                else if (RdecimalPart >= 0.25 && RdecimalPart < 0.5)
+                Double LdecimalPart;
+                LdecimalPart = power[1] - power[1].intValue();
+                if(LdecimalPart < 0.25)
+                    power[1] = power[1].intValue() + 0.0;
+                else if (LdecimalPart >= 0.25 && LdecimalPart < 0.5)
                     power[1] = power[1].intValue() + 0.25;
-                else if (RdecimalPart >= 0.50 && RdecimalPart < 0.75)
+                else if (LdecimalPart >= 0.50 && LdecimalPart < 0.75)
                     power[1] = power[1].intValue() + 0.50;
                 else
                     power[1] = power[1].intValue() + 0.75;
