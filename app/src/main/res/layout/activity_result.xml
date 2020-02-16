@@ -106,7 +106,7 @@
                     android:layout_below="@+id/logmarright"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Approx. Value:"
+                    android:text="Refractive error: "
                     android:textColor="@color/black"
                     android:textSize="25dp" />
 
@@ -217,7 +217,11 @@
                     android:layout_below="@+id/logmarleft"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
+<<<<<<< HEAD
                     android:text="Approx. Value:"
+=======
+                    android:text="Refractive error: "
+>>>>>>> 0317fa1cb7c6052d907cc57c21c14c27670b631c
                     android:textColor="@color/newwhite"
                     android:textSize="25dp" />
 

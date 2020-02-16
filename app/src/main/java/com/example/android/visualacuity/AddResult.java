@@ -41,7 +41,7 @@ public class AddResult extends AppCompatActivity {
                     if (id.equals(c)){
                         //Toast.makeText(this,"Entry Exists",Toast.LENGTH_LONG).show();
                         //ENTER CODE FOR ENTRY INTO DB
-                        Database.putUser(HomeActivity.s20[1],HomeActivity.s20[1]);
+                        Database.putUser(HomeActivity.s6[1],HomeActivity.s6[0],Double.toString(HomeActivity.power[1]),Double.toString(HomeActivity.power[0]));
                         Toast.makeText(AddResult.this, "User Added", Toast.LENGTH_LONG).show();
                         Intent i=new Intent(AddResult.this,MainActivity.class);
                         AddResult.this.startActivity(i);
@@ -52,6 +52,8 @@ public class AddResult extends AppCompatActivity {
                         HomeActivity.s20[1]=null;
                         HomeActivity.logMAR[0]=1.00;
                         HomeActivity.logMAR[1]=1.00;
+                        HomeActivity.power[0]=0;
+                        HomeActivity.power[1]=0;
                         HomeActivity.Taketestfirst=1;
                         flag=1;
                         Toast.makeText(AddResult.this, "Data Entered Successful", Toast.LENGTH_LONG).show();

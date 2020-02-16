@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/field_database"
-                android:ems="10"
+                android:ems="12"
                 android:hint="Enter Aadhar Card "
                 android:inputType="number"
                 android:padding="10dp"

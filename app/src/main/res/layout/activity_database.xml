@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/field_database"
-                android:ems="10"
+                android:ems="12"
                 android:hint="Aadhar Number"
                 android:inputType="number"
                 android:padding="8dp" />

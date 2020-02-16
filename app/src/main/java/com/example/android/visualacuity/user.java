@@ -11,6 +11,8 @@ public class user {
     String gender;
     String left;
     String right;
+    String ld;
+    String rd;
 
 
 
@@ -21,7 +23,7 @@ public class user {
 
     }
 
-    public user(String uid, String userid, String firstname, String lastname, String userage, String gender, String left, String right) {
+    public user(String uid, String userid, String firstname, String lastname, String userage, String gender, String left, String right,String ld,String rd) {
         this.userid = userid;
         this.firstname = firstname;
         this.lastname=lastname;
@@ -30,6 +32,8 @@ public class user {
         this.gender = gender;
         this.left=left;
         this.right=right;
+        this.ld=ld;
+        this.rd=rd;
 
     }
 
@@ -64,6 +68,14 @@ public class user {
 
     public String getRight() {
         return right;
+    }
+
+    public String getLd() {
+        return ld;
+    }
+
+    public String getRd() {
+        return rd;
     }
 
 
