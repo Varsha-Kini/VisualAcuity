@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     public Integer cantSeeFlag = 0;
     public static String[] s6=new String[2];
     public static String[] s20=new String[2];
+    public static double[] power = new double[]{0,0};
     public static Integer iteration=-1;
     public static double[] logMAR =new double[]{1.00,1.00};
     public double[] dividend = new double[]{60, 48, 38, 30, 24, 19, 15, 12, 9.5, 7.5, 6};
@@ -175,20 +176,67 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         if(flag>2 || (i==10 && rotationCount>4) || cantSeeFlag==1){
+            if(cantSeeFlag==1){
+                flag=2;
+            }
             if(iteration==0) {
+//                Log.i("Div: " + dividend[i]);
+                Double PR = (-0.052244 * dividend[i]) - 0.018535;
+                Log.i("PR = ", PR.toString());
+                Double RDecimalPart = 0.0;
+                RDecimalPart = PR - PR.intValue();
+                Log.i("DP = ", RDecimalPart.toString());
+                if(Math.abs(RDecimalPart) < 0.25)
+                    PR =  PR.intValue() - 0.0;
+                else if (Math.abs(RDecimalPart) >= 0.25 && Math.abs(RDecimalPart) < 0.5)
+                    PR = PR.intValue() - 0.25;
+                else if (Math.abs(RDecimalPart) >= 0.50 && Math.abs(RDecimalPart) < 0.75)
+                    PR = PR.intValue() - 0.50;
+                else
+                    PR = PR.intValue() - 0.75;
+
+                power[0] = PR;
                 s6[0] = "6/"+ (int) dividend[i] + " - " + flag;
                 s20[0] = "20/" + feetDividend[i] + " - " + flag;
                 logMAR[0] = logMARList[i] + (0.02 * flag);
                 logMAR[0] = Math.round(logMAR[0] * 10000d) / 10000d;
+//                Math.round(power[0], 2);
                 Intent myIntent1=new Intent(HomeActivity.this,EyeChange.class);
                 startActivity(myIntent1);
                
             }
             else if(iteration==1){
+
+                Double PR = (-0.052244 * dividend[i]) - 0.018535;
+//                Log.i("PR = ", PR.toString());
+                Double LDecimalPart = 0.0;
+                LDecimalPart = PR - PR.intValue();
+                Log.i("DP = ", LDecimalPart.toString());
+                if(Math.abs(LDecimalPart) < 0.25)
+                    PR =  PR.intValue() - 0.0;
+                else if (Math.abs(LDecimalPart) >= 0.25 && Math.abs(LDecimalPart) < 0.5)
+                    PR = PR.intValue() - 0.25;
+                else if (Math.abs(LDecimalPart) >= 0.50 && Math.abs(LDecimalPart) < 0.75)
+                    PR = PR.intValue() - 0.50;
+                else
+                    PR = PR.intValue() - 0.75;
+
+                power[1] = PR;
                 s6[1] = "6/" + (int) dividend[i] + " - " + flag;
                 s20[1] = "20/" + feetDividend[i] + " - " + flag;
                 logMAR[1] = logMARList[i] + (0.02 * flag);
                 logMAR[1] = Math.round(logMAR[1] * 10000d) / 10000d;
+//                power[1] = (-0.052244 * dividend[i]) - 0.018535;
+//                Double LdecimalPart = 0.0;
+//                LdecimalPart = power[1] - power[1].intValue();
+//                if(Math.abs(LdecimalPart) < 0.25)
+//                    power[1] = power[1].intValue() - 0.0;
+//                else if (Math.abs(LdecimalPart) >= 0.25 && Math.abs(LdecimalPart) < 0.5)
+//                    power[1] = power[1].intValue() - 0.25;
+//                else if (Math.abs(LdecimalPart) >= 0.50 && Math.abs(LdecimalPart) < 0.75)
+//                    power[1] = power[1].intValue() - 0.50;
+//                else
+//                    power[1] = power[1].intValue() - 0.75;
                 iteration=-1;
                 Log.d("myTag", s6[0]+"s6"+s6[1]);
                 HomeActivity.Taketestfirst=0;

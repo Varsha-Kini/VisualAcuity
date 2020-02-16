@@ -23,8 +23,9 @@ public class Database extends AppCompatActivity {
     static String firstname,lastname,userAge, gender,userid;
     CircleButton saveInfo;
     Spinner gen;
+    private Toast errorToast;
     static DatabaseReference database;
-    public static int Detailsflag=1;
+    public static int Detailsflag=0;
     public static ArrayList<String> list= new ArrayList<>();
 
     @Override
@@ -67,46 +68,54 @@ public class Database extends AppCompatActivity {
         list.add(userid);
         userAge = age.getText().toString().trim();
         gender = gen.getSelectedItem().toString();
-
+        Detailsflag=0;
         if(firstName.getText().toString().trim().length() == 0 )
         {
-            Toast.makeText(this,"Enter Your First Name",Toast.LENGTH_LONG).show();
+            errorToast = Toast.makeText(this,"Enter Your First Name",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
         if (lastName.getText().toString().trim().length() == 0)
         {
-            Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_LONG).show();
+            errorToast = Toast.makeText(this,"Enter Your Last Name",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
-        if(aadharNumber.getText().toString().trim().length() != 10)
+        if(aadharNumber.getText().toString().trim().length() != 12)
         {
-            Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_LONG).show();
+           errorToast = Toast.makeText(this,"Enter valid Aadhar number",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
         if (age.getText().toString().trim().length() == 0)
         {
-            Toast.makeText(this,"Enter Your Age",Toast.LENGTH_LONG).show();
+            errorToast = Toast.makeText(this,"Enter Your Age",Toast.LENGTH_SHORT);
+            errorToast.show();
+            Detailsflag=1;
         }
 
 
 
-        else
+        if(Detailsflag==0)
         {
-            Detailsflag=0;
+            //Detailsflag=0;
 //            @NotNull
 //            String uid = database.push().getKey();
 //            user user = new user(uid, userid, firstname, lastname, userAge, gender);
 //            database.child(uid).setValue(user);
               Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
-
+              //errorToast.cancel();
         }
 
 
     }
 
-    public static void putUser(String left,String right){
+    public static void putUser(String left,String right,String ld,String rd){
         String uid = database.push().getKey();
-        user user = new user(uid, userid, firstname, lastname, userAge, gender,left,right);
+        user user = new user(uid, userid, firstname, lastname, userAge, gender,left,right,ld,rd);
         database.child(uid).setValue(user);
         Log.d("myTag","User added");
-        //Toast.makeText(Database.this, "User Added", Toast.LENGTH_LONG).show();
+        //Toast.makeText(Database.this, "User Added", Toast.LENGTH_SHORT).show();
     }
 
     @Override
